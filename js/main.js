@@ -36,7 +36,13 @@ function generateNewTask() {
 }
 function deleteTask(event) {
   const taskToDelete = event.target.closest("#task");
+  console.log(taskToDelete)
   taskToDelete.remove();
 }
 
 addBtn.addEventListener("click", addTask);
+input.addEventListener("keydown", function addTaskEnter(e){
+  if (e.keyCode ==13){
+    addTask()
+  }
+});
